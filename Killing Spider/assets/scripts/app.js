@@ -2,10 +2,35 @@ let chosenMaxLife =100;
 const ATTACK_VALUE = 10;
 const MONSTER_ATTACK_VALUE =14;
 const STRONG_ATTACK_VALUE =17;
+const HEAL_VALUE =20;
 let currentMonsterHealth = chosenMaxLife;
 let currentPlayerHealth = chosenMaxLife;
+let hasBonusLife= true;
 
 adjustHealthBars(chosenMaxLife);
+
+function endRound(){
+    const initialPlayerHealth = currentPlayerHealth;
+    const PlayerDamage =  dealPlayerDamage(MONSTER_ATTACK_VALUE);
+    currentPlayerHealth -= PlayerDamage;
+
+    if(currentPlayerHealth<=0 && hasBonusLife == true){
+        hasBonusLife = false;
+        removeBonusLife();
+        currentPlayerHealth =initialPlayerHealth;
+        alert("Bonous life saved you");
+        setPlayerHealth(initialPlayerHealth);
+    }
+
+    if (currentMonsterHealth <= 0 && currentPlayerHealth >0){
+        alert("You won!!");
+    } else if (currentPlayerHealth <=0 && currentMonsterHealth >0){
+        alert("You lost !!");
+    } else if (currentPlayerHealth <=0 && currentMonsterHealth <=0){
+        alert("its a tie !!");
+    }
+
+}
 
 function attackMonster(mode){
     let maxDamage = 0;
@@ -16,25 +41,32 @@ function attackMonster(mode){
     }
     const damage= dealMonsterDamage(maxDamage);
     currentMonsterHealth -= damage;
-    const PlayerDamage =  dealPlayerDamage(MONSTER_ATTACK_VALUE);
-    currentPlayerHealth -= PlayerDamage;
-    if (currentMonsterHealth <= 0 && currentPlayerHealth >0){
-        alert("You won!!")
-    } else if (currentPlayerHealth <=0 && currentPlayerHealth >0){
-        alert("You lost !!")
-    } else if (currentPlayerHealth <=0 && currentPlayerHealth <=0){
-        alert("its a tie !!")
-    }
+    endRound();
 }
 
 function attackHandler() {
     attackMonster("ATTACK");
 }
 
-function strongAttackGandler() {
+function strongAttackHandler() {
     attackMonster("STRONG_ATTACK");
     
 }
 
+function healPlayerHandler(){
+    let healValue;
+    if (currentPlayerHealth>=chosenMaxLife - HEAL_VALUE){
+        alert(`You can't heal more than ${chosenMaxLife}`);
+        healValue = chosenMaxLife - currentPlayerHealth;
+    } else{
+        healValue = HEAL_VALUE;
+    }
+    increasePlayerHealth(healValue);
+    currentPlayerHealth += healValue;
+    endRound();
+
+};
+
 attackBtn.addEventListener("click",attackHandler);
-strongAttackBtn.addEventListener("click",strongAttackGandler);
+strongAttackBtn.addEventListener("click",strongAttackHandler);
+healBtn.addEventListener("click", healPlayerHandler);
