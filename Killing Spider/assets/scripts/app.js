@@ -125,6 +125,7 @@ function endRound(){
 function attackMonster(mode){
     let maxDamage = 0;
     let logEvent= "";
+    
     if(mode === "ATTACK"){
         maxDamage = ATTACK_VALUE;
         logEvent="ATTACK"
