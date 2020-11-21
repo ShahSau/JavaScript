@@ -8,7 +8,23 @@ const cancelAddMovieButton = document.querySelector(".btn--passive");
 const confirmAddMovieButton = document.querySelector(".btn--success");
 const userInputs = addMovieModal.querySelectorAll("input");
 
+const entryTextSection = document.getElementById("entry-text");
+
 const movies= [];
+
+
+const updateUI = ()=>{
+    if(movies.length === 0){
+        entryTextSection.style.display = "block";
+
+    }else {
+        entryTextSection.style.display = "none";
+    }
+};
+
+const renderNewMovieElement = (title, image, rating)=>{
+    const new
+};
 
 
 
@@ -59,6 +75,7 @@ const addMovieHandler= ()=>{
     console.log(movies);
     toggleMovieModal();
     clearMovieInput();
+    updateUI();
 
 };
 
