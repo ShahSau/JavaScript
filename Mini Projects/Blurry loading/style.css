@@ -16,3 +16,20 @@ body{
     overflow: hidden;
     margin: 0;
 }
+
+.bg{
+    background: url('https://www.hdwallpapers.in/download/abstract_cover_background_4k_hd-HD.jpg') no-repeat center center/cover;
+    position: absolute;
+    top:-30px;
+    left: -30px;
+    width: calc(100vw + 60px);
+    height: calc(100vh + 60px);
+    z-index: -1;
+    filter: blur(0px);
+}
+
+.loading-text{
+    font-size: 50px;
+    color: rgb(10, 10, 10);
+
+}
