@@ -9,7 +9,7 @@ For this challenge you will be presented with a string such as 800-692-7753 or 8
 function telephoneCheck(str) {
     /**
      * what this regex does is, 1st check for 1 and optional space, but this 1 and optional space is also optional.
-     * then it checks for ( t3 digits ) or just three digits. then optional space or -. then 3 more digits. Again cheks for optional
+     * then it checks for ( 3 digits ) or just three digits. then optional space or -. then 3 more digits. Again cheks for optional
      * space or dash. finally 4 digits.
      */
     var regex = /^(1\s?)?(\(\d{3}\)|\d{3})[\s\-]?\d{3}[\s\-]?\d{4}$/;
