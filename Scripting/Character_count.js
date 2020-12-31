@@ -1,7 +1,7 @@
 function charCount(str){
     let str2= str.replace(/ /g,'')
     str2=str2.toLowerCase();
-    var ob = new Object();
+    var ob = {};
     for(let i=0; i< str2.length; i++){
       if(str2[i] in ob){
         ob[str2[i]]++
