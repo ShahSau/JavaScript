@@ -1,14 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!--- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />-->
-    <link rel="stylesheet" href="style.css">
-    <title>My Project</title>
-</head>
-<body>
-    <h1>Project Starter</h1>
-    <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Weather in Mars</title>
+  </head>
+  <body>
+    <main class="mars-current-weather">
+      <h1 class="main-title">Latest weather at Elysium Plantitia</h1>
+
+      <div class="date">
+        <h2 class="section-title section-title--date">SOL 377</h2>
+        <p class="date__day">December 18</p>
+      </div>
+
+      <div class="temp">
+        <h2 class="section-title">Temperature</h2>
+        <p class="reading">High: -20ºC</p>
+        <p class="reading">Low: -120ºC</p>
+      </div>
+
+      <div class="wind">
+        <h2 class="section-title">Wind</h2>
+        <p class="reading">75kph</p>
+
+        <div class="wind__direction">
+          <p class="sr-only">45deg</p>
+          <div class="wind__arrow"></div>
+        </div>
+      </div>
+
+      <div class="info">
+        <p>
+          InSight is taking daily weather measurements (temperature, wind,
+          pressure) on the surface of Mars at Elysium Planitia, a flat, smooth
+          plain near Mars’ equator.
+        </p>
+        <p>
+          This is only a part of InSight’s mission.
+          <a href="https://mars.nasa.gov/insight/mission/overview/"
+            >Click here</a
+          >
+          to find out more.
+        </p>
+      </div>
+      <div class="unit">
+        <label for="cel">ºC</label>
+        <input type="radio" id="cel" name="unit" checked />
+        <button class="unit__toggle"></button>
+        <label for="fah">ºF</label>
+        <input type="radio" id="fah" name="unit" />
+      </div>
+      <div class="previous-weather">
+       <label for="weather-toggle" class="show-previous-weather-label"
+          ><span>&#8593;</span>
+          <span class="sr-only">Show previous weather</span></label
+        >  
+        <input
+          type="checkbox"
+          id="weather-toggle"
+          class="show-previous-weather-toggle"
+        /> 
+        <h2 class="main-title previous-weather__title">Previous 7 days</h2>
+
+        <div class="previous-days">
+          <div class="previous-day">
+            <h3 class="previous-day__sol">Sol 371</h3>
+            <p class="previous-day__date">September 31</p>
+            <p class="previous-day__temp">High: -20ºC</p>
+            <p class="previous-day__temp">Low: -120ºC</p>
+            <button class="previous-day__more-info">more info</button>
+          </div>
+
+          <div class="previous-day">
+            <h3 class="previous-day__sol">Sol 371</h3>
+            <p class="previous-day__date">September 31</p>
+            <p class="previous-day__temp">High: -20ºC</p>
+            <p class="previous-day__temp">Low: -120ºC</p>
+            <button class="previous-day__more-info">more info</button>
+          </div>
+
+          <div class="previous-day">
+            <h3 class="previous-day__sol">Sol 371</h3>
+            <p class="previous-day__date">September 31</p>
+            <p class="previous-day__temp">High: -20ºC</p>
+            <p class="previous-day__temp">Low: -120ºC</p>
+            <button class="previous-day__more-info">more info</button>
+          </div>
+
+          <div class="previous-day">
+            <h3 class="previous-day__sol">Sol 371</h3>
+            <p class="previous-day__date">September 31</p>
+            <p class="previous-day__temp">High: -20ºC</p>
+            <p class="previous-day__temp">Low: -120ºC</p>
+            <button class="previous-day__more-info">more info</button>
+          </div>
+
+          <div class="previous-day">
+            <h3 class="previous-day__sol">Sol 371</h3>
+            <p class="previous-day__date">September 31</p>
+            <p class="previous-day__temp">High: -20ºC</p>
+            <p class="previous-day__temp">Low: -120ºC</p>
+            <button class="previous-day__more-info">more info</button>
+          </div>
+
+          <div class="previous-day">
+            <h3 class="previous-day__sol">Sol 371</h3>
+            <p class="previous-day__date">September 31</p>
+            <p class="previous-day__temp">High: -20ºC</p>
+            <p class="previous-day__temp">Low: -120ºC</p>
+            <button class="previous-day__more-info">more info</button>
+          </div>
+
+          <div class="previous-day">
+            <h3 class="previous-day__sol">Sol 371</h3>
+            <p class="previous-day__date">September 31</p>
+            <p class="previous-day__temp">High: -20ºC</p>
+            <p class="previous-day__temp">Low: -120ºC</p>
+            <button class="previous-day__more-info">more info</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="previous-weather"></div>
+
+    <script src="scripts/script.js"></script>
+  </body>
 </html>
