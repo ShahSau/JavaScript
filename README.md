@@ -1,2 +1,2 @@
 # JavaScript
-# Javascript projects.
+## Javascript projects.
